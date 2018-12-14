@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LeagueManager.Leagues.Models\LeagueManager.Leagues.Models.csproj" />
+    <ProjectReference Include="..\LeagueManager.Registration.Models\LeagueManager.Registration.Models.csproj" />
+  </ItemGroup>
+
+</Project>
