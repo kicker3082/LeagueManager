@@ -27,7 +27,7 @@ using Is = NUnit.Framework.Is;
 namespace Tests
 {
     [TestClass]
-    public class RegistrationFixture
+    public class RegistrationFixture_RegisterPlayerForSeason
     {
         // Registration Scenarios:
         //  1. Attempt to register player
@@ -38,30 +38,25 @@ namespace Tests
         public void Setup()
         {
             // Configure for live registration with in-Memory database
-            // Configure season definitions
+            // Configure season
+            // Set clock
             // 
         }
 
         [TestMethod]
-        public void RegisterPlayerForTravelSeason_AgeOutOfRange_ReturnsAgeOutOfRangeRegistration()
+        public void RegisterPlayerForSeason_AgeOutOfRange_ReturnsAgeOutOfRangeRegistration()
         {
 
         }
 
         [TestMethod]
-        public void RegisterPlayerForTravelSeason_RegistrationClosed_ReturnsRegistrationClosedRegistration()
+        public void RegisterPlayerForSeason_RegistrationClosed_ReturnsRegistrationClosedRegistration()
         {
 
         }
 
         [TestMethod]
-        public void RegisterPlayerForTravelSeason_SeasonAlreadyStarted_ReturnsSeasonStartedRegistration()
-        {
-
-        }
-
-        [TestMethod]
-        public void RegisterPlayerForTravelSeason_SeasonAlreadyStarted_ReturnsSeasonStartedRegistration()
+        public void RegisterPlayerForSeason_SeasonAlreadyStarted_ReturnsSeasonStartedRegistration()
         {
 
         }

@@ -2,7 +2,6 @@ using LeagueManager.Registration.Operations.EF;
 using LeagueManager.Registration.Operations;
 using System;
 
-
 #region Test
 
 // ReSharper disable RedundantUsingDirective

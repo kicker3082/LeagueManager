@@ -52,7 +52,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1F5F53F1-11C4-40B4-9A6C-7DDB1D36C242}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		Use Cases.xlsx = Use Cases.xlsx
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeagueManager.Shared", "LeagueManager.Shared\LeagueManager.Shared.csproj", "{CA6186A6-948C-4136-98E3-8E8BF233D916}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -124,6 +127,10 @@ Global
 		{CCF81103-2E20-4588-9855-5D9A6D4D975B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCF81103-2E20-4588-9855-5D9A6D4D975B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCF81103-2E20-4588-9855-5D9A6D4D975B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA6186A6-948C-4136-98E3-8E8BF233D916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA6186A6-948C-4136-98E3-8E8BF233D916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA6186A6-948C-4136-98E3-8E8BF233D916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA6186A6-948C-4136-98E3-8E8BF233D916}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -144,6 +151,7 @@ Global
 		{BBA89753-579D-49C4-BDDA-F49E0684D95A} = {20ED674E-164A-45DC-B339-DBBB65654E93}
 		{4C406363-A2CA-4863-BF3F-C26E2E5E6A63} = {20ED674E-164A-45DC-B339-DBBB65654E93}
 		{CCF81103-2E20-4588-9855-5D9A6D4D975B} = {20ED674E-164A-45DC-B339-DBBB65654E93}
+		{CA6186A6-948C-4136-98E3-8E8BF233D916} = {10AEAC33-371A-4297-B129-30F7362EDB8F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {97EDB173-6A25-4389-9CEB-E120B83CB8DE}
