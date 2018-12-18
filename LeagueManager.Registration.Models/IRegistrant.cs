@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace LeagueManager.Registration.Models
 {
-    public class Registrant : Player
+    public interface IRegistrant : IPlayer
     {
-        public virtual ICollection<Registration> Registrations { get; set; }
+        ICollection<IRegistration> Registrations { get; set; }
     }
 }

@@ -6,13 +6,13 @@ namespace LeagueManager.Rosters.Operations
 {
     public interface IRosterer
     {
-        IEnumerable<TeamPlayer> GetAllRosteredPlayersOnATeam(Team teamOfPlayers);
-        IEnumerable<TeamCoach> GetAllCoachesRosteredOnATeam(Team teamOfCoaches);
-        TeamPlayer AssignRegisteredPlayerToTeam(Player playerToAssign, Team teamToAssignPlayerTo);
-        void RemovePlayerFromTeam(TeamPlayer playerToRemoveFromTeam);
-        TeamPlayer TransferPlayerFromOneTeamToAnother(TeamPlayer playerToTransfer, Team newTeamOfPlayer);
-        TeamCoach AssignCoachToTeam(Coach coachToAssign, Team teamToAssignCoachTo, CoachRole roleOfCoachOnTeam);
-        void RemoveCoachFromTeam(TeamCoach teamCoachToRemove);
+        IEnumerable<ITeamPlayer> GetAllRosteredPlayersOnATeam(ITeam teamOfPlayers);
+        IEnumerable<ITeamCoach> GetAllCoachesRosteredOnATeam(ITeam teamOfCoaches);
+        ITeamPlayer AssignRegisteredPlayerToTeam(IPlayer playerToAssign, ITeam teamToAssignPlayerTo);
+        void RemovePlayerFromTeam(ITeamPlayer playerToRemoveFromTeam);
+        ITeamPlayer TransferPlayerFromOneTeamToAnother(ITeamPlayer playerToTransfer, ITeam newTeamOfPlayer);
+        ITeamCoach AssignCoachToTeam(ICoach coachToAssign, ITeam teamToAssignCoachTo, ICoachRole roleOfCoachOnTeam);
+        void RemoveCoachFromTeam(ITeamCoach teamCoachToRemove);
 
     }
 }

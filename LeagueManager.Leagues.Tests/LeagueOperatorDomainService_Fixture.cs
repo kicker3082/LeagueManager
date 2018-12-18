@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using LeagueManager.Leagues.Models;
 using LeagueManager.Leagues.Operations;
+using Moq;
 
 #region Test
 
@@ -31,13 +32,13 @@ namespace LeagueManager.Leagues.Tests
     // ReSharper disable once InconsistentNaming
     public class LeagueOperatorDomainService_Fixture
     {
-        readonly List<Team> _createdTeams = new List<Team>();
+        readonly List<ITeam> _createdTeams = new List<ITeam>();
         ILeagueOperator _svc;
 
         [TestInitialize]
         public void Setup()
         {
-            _svc = LeagueOperatorDomainService.NewService();
+            _svc = new LeagueOperatorDomainService(() => new Team());
         }
 
         [TestCleanup]
@@ -59,14 +60,14 @@ namespace LeagueManager.Leagues.Tests
             //);
         }
 
-        Team CreateNewTeamAndAddToList(League league, string nameOfNewTeam)
+        ITeam CreateNewTeamAndAddToList(ILeague league, string nameOfNewTeam)
         {
             var team = _svc.CreateNewTeamInLeague(league, nameOfNewTeam);
             _createdTeams.Add(team);
             return team;
         }
 
-        void RemoveTeamAndRemoveFromList(Team teamToRemove)
+        void RemoveTeamAndRemoveFromList(ITeam teamToRemove)
         {
             _svc.RemoveTeamFromLeague(teamToRemove);
             _createdTeams.Remove(teamToRemove);
@@ -83,12 +84,13 @@ namespace LeagueManager.Leagues.Tests
 
             Assert.That(ex.Message, Is.EqualTo(LeagueOperatorDomainService.Strings.TeamOfNameDoesNotExist));
         }
+
         [TestMethod]
         public void CreateNewTeam_TeamDoesNotAlreadExist_TeamCreated()
         {
             var league = _svc.CreateNewLeague(@"My Happy League");
             var team = CreateNewTeamAndAddToList(league, @"Happy Team Full Of Happy Players");
-            
+
             Assert.That(team, Is.Not.Null);
         }
 
@@ -117,8 +119,7 @@ namespace LeagueManager.Leagues.Tests
         [TestMethod]
         public void CreateNewLeague_LeagueNameNull_Throws()
         {
-            var svc = LeagueOperatorDomainService.NewService();
-            var ex = Assert.Throws<ArgumentNullException>(() => svc.CreateNewLeague(null));
+            var ex = Assert.Throws<ArgumentNullException>(() => _svc.CreateNewLeague(null));
 
             Assert.That(ex.ParamName, Is.EqualTo(@"nameOfNewLeague"));
         }
@@ -130,6 +131,13 @@ namespace LeagueManager.Leagues.Tests
 
             Assert.That(ex.ParamName, Is.EqualTo(@"nameOfNewLeague"));
             Assert.That(ex.Message.StartsWith(LeagueOperatorDomainService.Strings.LeagueNameEmptyErrorMessage, StringComparison.CurrentCulture));
+        }
+        class Team : ITeam
+        {
+            ICollection<ITeamPlayer> _players = new List<ITeamPlayer>();
+            ILeague ITeam.LeagueOfTeam { get; set; }
+            string ITeam.Name { get; set; }
+            ICollection<ITeamPlayer> ITeam.Players => _players;
         }
     }
 }

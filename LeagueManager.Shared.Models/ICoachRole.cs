@@ -3,13 +3,13 @@ namespace LeagueManager.Shared.Models
     /// <summary>
     /// E.g.: Head Coach, Assistant Coach, Skills Coach, etc..
     /// </summary>
-    public class CoachRole
+    public interface ICoachRole
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        int Id { get; set; }
+        string Name { get; set; }
         /// <summary>
         /// Indicates whether this coach has the top authority on the team. Usually the head coach.
         /// </summary>
-        public bool IsAuthority { get; set; }
+        bool IsAuthority { get; set; }
     }
 }

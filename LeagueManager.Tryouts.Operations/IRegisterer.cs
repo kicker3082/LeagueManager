@@ -5,6 +5,6 @@ namespace LeagueManager.Tryouts.Operations
 {
     public interface IRegisterer
     {
-        TryoutPlayer RegisterForTryoutByAge(Player playerToRegister, Tryout tryoutToRegisterFor);
+        ITryoutPlayer RegisterForTryoutByAge(IPlayer playerToRegister, ITryout tryoutToRegisterFor);
     }
 }

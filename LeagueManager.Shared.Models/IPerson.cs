@@ -5,11 +5,11 @@ namespace LeagueManager.Shared.Models
     /// <summary>
     /// Represents a person. May be inherited by more concrete representations.
     /// </summary>
-    public abstract class Person
+    public interface IPerson
     {
-        public PersonName Name { get; set; }
+        PersonName Name { get; set; }
         // ReSharper disable once InconsistentNaming
-        public DateTime? DOB { get; set; }
+        DateTime? DOB { get; set; }
 
     }
 }

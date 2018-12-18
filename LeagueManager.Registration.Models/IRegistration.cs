@@ -6,11 +6,10 @@ namespace LeagueManager.Registration.Models
     /// <summary>
     /// The event that occurs when a Registrant registers for a league.
     /// </summary>
-    public class Registration
+    public interface IRegistration
     {
-        public int Id { get; set; }
-        public Player RegisteredPlayer { get; set; }
-        public DateTime RegisteredOn { get; set; }
+        IPlayer RegisteredPlayer { get; set; }
+        DateTime RegisteredOn { get; set; }
 
     }
 }

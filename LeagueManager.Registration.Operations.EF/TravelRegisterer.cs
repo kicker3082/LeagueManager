@@ -6,9 +6,9 @@ namespace LeagueManager.Registration.Operations.EF
 {
     public class TravelRegisterer : IRegisterer
     {
-        Models.Registration IRegisterer.RegisterForLeagueByAge(
-            Registrant personToRegister, 
-            LeagueSeason leagueSeasonToRegisterFor)
+        IRegistration IRegisterer.RegisterForLeagueByAge(
+            IRegistrant personToRegister, 
+            ILeagueSeason leagueSeasonToRegisterFor)
         {
             if (personToRegister == null)
                 throw new ArgumentNullException(nameof(personToRegister));

@@ -11,6 +11,6 @@ namespace LeagueManager.Registration.Operations
         /// <param name="personToRegister"></param>
         /// <param name="leageSeasonToRegisterFor"></param>
         /// <returns>A new registration record</returns>
-        Models.Registration RegisterForLeagueByAge(Registrant personToRegister, LeagueSeason leageSeasonToRegisterFor);
+        Models.IRegistration RegisterForLeagueByAge(IRegistrant personToRegister, ILeagueSeason leageSeasonToRegisterFor);
     }
 }

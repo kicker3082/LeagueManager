@@ -4,8 +4,8 @@ namespace LeagueManager.Leagues.Operations
 {
     public interface ILeagueOperator
     {
-        League CreateNewLeague(string nameOfNewLeague);
-        Team CreateNewTeamInLeague(League leagueToCreateNewTeamIn, string nameOfNewTeam);
-        void RemoveTeamFromLeague(Team teamToRemoveFromLeague);
+        ILeague CreateNewLeague(string nameOfNewLeague);
+        ITeam CreateNewTeamInLeague(ILeague leagueToCreateNewTeamIn, string nameOfNewTeam);
+        void RemoveTeamFromLeague(ITeam teamToRemoveFromLeague);
     }
 }

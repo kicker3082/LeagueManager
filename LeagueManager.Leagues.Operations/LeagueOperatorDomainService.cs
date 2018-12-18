@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using LeagueManager.Leagues.Models;
 
 namespace LeagueManager.Leagues.Operations
@@ -17,14 +16,15 @@ namespace LeagueManager.Leagues.Operations
 
         #endregion
 
-        static readonly ConcurrentDictionary<string, Team> Teams = new ConcurrentDictionary<string, Team>();
-        LeagueOperatorDomainService() { }
-        public static ILeagueOperator NewService()
-        {
-            return new LeagueOperatorDomainService();
+        static readonly ConcurrentDictionary<string, ITeam> teams = new ConcurrentDictionary<string, ITeam>();
+
+        Func<ITeam> _teambuilder { get; }
+
+        public LeagueOperatorDomainService(Func<ITeam> teambuilder) {
+            _teambuilder = teambuilder;
         }
 
-        League ILeagueOperator.CreateNewLeague(string nameOfNewLeague)
+        ILeague ILeagueOperator.CreateNewLeague(string nameOfNewLeague)
         {
             if (nameOfNewLeague == null)
                 throw new ArgumentNullException(nameof(nameOfNewLeague));
@@ -35,22 +35,20 @@ namespace LeagueManager.Leagues.Operations
             return null;
         }
 
-        Team ILeagueOperator.CreateNewTeamInLeague(League leagueToCreateNewTeamIn, string nameOfNewTeam)
+        ITeam ILeagueOperator.CreateNewTeamInLeague(ILeague leagueToCreateNewTeamIn, string nameOfNewTeam)
         {
-            var newTeam = new Team
-            {
-                Name = nameOfNewTeam
-            };
-            if (!Teams.TryAdd(nameOfNewTeam, newTeam))
+            var newTeam = _teambuilder();
+            newTeam.Name = nameOfNewTeam;
+
+            if (!teams.TryAdd(nameOfNewTeam, newTeam))
                 throw new InvalidOperationException(Strings.TeamWithNameAlreadyExists);
 
             return newTeam;
         }
 
-        void ILeagueOperator.RemoveTeamFromLeague(Team teamToRemoveFromLeague)
+        void ILeagueOperator.RemoveTeamFromLeague(ITeam teamToRemoveFromLeague)
         {
-            Team removedTeam;
-            if (!Teams.TryRemove(teamToRemoveFromLeague.Name, out removedTeam))
+            if (!teams.TryRemove(teamToRemoveFromLeague.Name, out ITeam removedTeam))
                 throw new InvalidOperationException(Strings.TeamOfNameDoesNotExist);
         }
     }
