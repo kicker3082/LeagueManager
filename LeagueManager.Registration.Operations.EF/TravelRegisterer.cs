@@ -4,6 +4,7 @@ using System;
 
 namespace LeagueManager.Registration.Operations.EF
 {
+
     public class TravelRegisterer : IRegisterer
     {
         IRegistration IRegisterer.RegisterForLeagueByAge(
