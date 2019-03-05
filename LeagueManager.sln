@@ -47,15 +47,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeagueManager.Registration.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeagueManager.Registration.Operations.EF", "LeagueManager.Registration.Operations.EF\LeagueManager.Registration.Operations.EF.csproj", "{4C406363-A2CA-4863-BF3F-C26E2E5E6A63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeagueManager.Registration.Operations.EF.Tests", "LeagueManager.Registration.Operations.EF.Tests\LeagueManager.Registration.Operations.EF.Tests.csproj", "{CCF81103-2E20-4588-9855-5D9A6D4D975B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeagueManager.Registration.Operations.EF.Tests", "LeagueManager.Registration.Operations.EF.Tests\LeagueManager.Registration.Operations.EF.Tests.csproj", "{CCF81103-2E20-4588-9855-5D9A6D4D975B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1F5F53F1-11C4-40B4-9A6C-7DDB1D36C242}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
-		Use Cases.xlsx = Use Cases.xlsx
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeagueManager.Shared", "LeagueManager.Shared\LeagueManager.Shared.csproj", "{CA6186A6-948C-4136-98E3-8E8BF233D916}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeagueManager.Shared", "LeagueManager.Shared\LeagueManager.Shared.csproj", "{CA6186A6-948C-4136-98E3-8E8BF233D916}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Design", "Design", "{B5F358D8-B0B8-4296-A920-F298F3EB6BD7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{485F432F-13CA-45AC-A66F-0D651CABA3AD}"
+	ProjectSection(SolutionItems) = preProject
+		Design\UI\Use Cases.xlsx = Design\UI\Use Cases.xlsx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wireframes", "Wireframes", "{9CEBC2EF-09AC-479C-BF22-346479FCD81D}"
+	ProjectSection(SolutionItems) = preProject
+		Design\UI\Wireframes\WF-Shell.png = Design\UI\Wireframes\WF-Shell.png
+		Design\UI\Wireframes\Wireframe Elements.xlsx = Design\UI\Wireframes\Wireframe Elements.xlsx
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -152,6 +164,9 @@ Global
 		{4C406363-A2CA-4863-BF3F-C26E2E5E6A63} = {20ED674E-164A-45DC-B339-DBBB65654E93}
 		{CCF81103-2E20-4588-9855-5D9A6D4D975B} = {20ED674E-164A-45DC-B339-DBBB65654E93}
 		{CA6186A6-948C-4136-98E3-8E8BF233D916} = {10AEAC33-371A-4297-B129-30F7362EDB8F}
+		{B5F358D8-B0B8-4296-A920-F298F3EB6BD7} = {1F5F53F1-11C4-40B4-9A6C-7DDB1D36C242}
+		{485F432F-13CA-45AC-A66F-0D651CABA3AD} = {B5F358D8-B0B8-4296-A920-F298F3EB6BD7}
+		{9CEBC2EF-09AC-479C-BF22-346479FCD81D} = {485F432F-13CA-45AC-A66F-0D651CABA3AD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {97EDB173-6A25-4389-9CEB-E120B83CB8DE}
